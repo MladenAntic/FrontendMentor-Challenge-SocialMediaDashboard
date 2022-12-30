@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youtube: hsl(348, 97%, 39%);
+  --toggle-dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --toggle-light: hsl(230, 22%, 74%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+body {
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  display: grid;
+  place-items: center;
+  transition: 0.5s ease-in-out;
+}
+
+.top-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--top-bg-pattern);
+  border-radius: 0 0 1.5625rem 1.5625rem;
+}
+
+#main-container {
+  z-index: 10;
+  width: 75%;
+  height: 90%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.125rem;
+}
+
+.main-title {
+  color: var(--text-primary);
+  margin-bottom: 0.3125rem;
+}
+
+.total-followers {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.mobile-divider {
+  display: none;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+}
+
+.mode {
+  font-size: 0.875rem;
+  display: inline-block;
+  color: var(--text-secondary);
+  font-weight: 700;
+  margin-right: 1.25rem;
+}
+
+.slider {
+  width: 4.6875rem;
+  height: 1.875rem;
+  background: var(--toggle-dark);
+  border-radius: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggler {
+  position: absolute;
+  width: 1.7188rem;
+  height: 1.7188rem;
+  background: var(--background);
+  margin-left: 0.125rem;
+  border-radius: 50%;
+  pointer-events: all;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.position {
+  width: 1.7188rem;
+  height: 1.7188rem;
+  background: transparent;
+  margin-left: 0.125rem;
+  border-radius: 50%;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.position-light {
+  margin-right: 0.125rem;
+}
+
+.followers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3.125rem;
+}
+
+.followers-card {
+  background: var(--card-bg);
+  width: 23%;
+  height: 100%;
+  padding: 1.875rem 0 1.5625rem 0;
+  border-radius: 0.3125rem;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  position: relative;
+}
+
+.followers-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0.3125rem;
+  border-radius: 0.3125rem 0.3125rem 0 0;
+}
+
+.followers-card:first-child::after {
+  background: var(--facebook);
+}
+
+.followers-card:nth-of-type(2)::after {
+  background: var(--twitter);
+}
+
+.followers-card:nth-of-type(3)::after {
+  background: var(--instagram);
+}
+
+.followers-card:last-child::after {
+  background: var(--youtube);
+}
+
+.username-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.username-wrapper .social-icon {
+  margin-right: 0.625rem;
+}
+
+.username {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.followers-number {
+  font-size: 3rem;
+  color: var(--text-primary);
+}
+
+.followers-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.comparison-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  margin-right: 0.3125rem;
+}
+
+.comparison-today {
+  color: var(--lime-green);
+  font-weight: 700;
+}
+
+.followers-card:nth-of-type(4) .comparison-today {
+  color: var(--bright-red);
+}
+
+.overview {
+  color: var(--text-primary);
+  margin-bottom: 1.5625rem;
+}
+
+.stats-container {
+  display: flex;
+  gap: 1.5625rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.stats-card {
+  width: 23%;
+  height: 50%;
+  background: var(--card-bg);
+  padding: 1.5625rem 2.1875rem;
+  border-radius: 0.3125rem;
+}
+
+.stats-header,
+.stats-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-header {
+  align-items: center;
+}
+
+.stats-header {
+  margin-bottom: 1.875rem;
+}
+
+.metric {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  align-self: flex-end;
+}
+
+.stats-number {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+}
+
+.stats-footer .comparison-wrapper {
+  align-self: flex-end;
+}
+
+.stats-card:nth-of-type(2) .stats-footer .comparison-wrapper .comparison-today,
+.stats-card:nth-of-type(7) .stats-footer .comparison-wrapper .comparison-today,
+.stats-card:last-child .stats-footer .comparison-wrapper .comparison-today {
+  color: var(--bright-red);
+}
+
+@media screen and (max-width: 48rem) {
+  #main-container {
+    width: 90%;
+    height: 97.5%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5625rem;
+  }
+
+  .mobile-divider {
+    display: block;
+    width: 100%;
+    height: 0.0625rem;
+    background-color: var(--toggle-light);
+    margin: 1.5625rem 0;
+  }
+
+  .theme-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .followers {
+    flex-direction: column;
+    gap: 1.5625rem;
+  }
+
+  .followers-card {
+    width: 100%;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    padding-bottom: 2.1875rem;
+  }
+
+  .stats-card {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 48.0625rem) and (max-width: 79.6875rem) {
+  .stats-container {
+    padding-bottom: 2.1875rem;
+  }
+
+  .stats-card {
+    width: 47.5%;
+  }
+}

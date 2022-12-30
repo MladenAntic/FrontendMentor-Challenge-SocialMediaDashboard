@@ -1,0 +1,8 @@
+:root {
+    --background: hsl(230, 17%, 14%);
+    --top-bg-pattern: hsl(232, 19%, 15%);
+    --card-bg: hsl(228, 28%, 20%);
+    --text-primary: hsl(0, 0%, 100%);
+    --text-secondary: hsl(228, 34%, 66%);
+}
+
